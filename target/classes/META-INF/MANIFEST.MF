@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: InventarioComputadoresApi
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: samuel
+Implementation-Vendor-Id: br.com.inventarioApi
+Build-Jdk: 1.8.0_162
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/InventarioComputadoresApi
+Created-By: Maven Integration for Eclipse
+
