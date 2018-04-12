@@ -25,12 +25,9 @@ public class PessoaService {
 	
 	//atualizar pessoa	
 	public Pessoa atualizar(Integer codigo, Pessoa pessoa) {
-		
 		Pessoa pessoaSalva = buscarPessoaPeloCodigo(codigo);
-		
 		//copiando as propriedades de pessoa e ignorando o codigo
 		BeanUtils.copyProperties(pessoa, pessoaSalva, "id");
-		
 		//salvando a pessoa atualizada
 		return pessoaRepository.save(pessoaSalva);
 	}
@@ -38,7 +35,7 @@ public class PessoaService {
 
 
 	//metodo criado para buscar pessoa pelo id
-	private Pessoa buscarPessoaPeloCodigo(Integer codigo) {
+	public Pessoa buscarPessoaPeloCodigo(Integer codigo) {
 		
 		//buscando a pessoa pelo codigo
 		Pessoa pessoaSalva = pessoaRepository.findOne(codigo);
