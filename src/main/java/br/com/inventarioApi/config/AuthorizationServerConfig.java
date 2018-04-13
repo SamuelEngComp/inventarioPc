@@ -18,16 +18,6 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 	@Autowired
 	private AuthenticationManager authenticationManager;
 	
-	@Override
-	public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
-		clients.inMemory()
-		.withClient("angular")
-		.secret("{noop}angular")
-		.scopes("read","write")
-		.authorizedGrantTypes("password")
-		.accessTokenValiditySeconds(1800);
-	}
-	
 	
 	@Override
 	public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
@@ -37,10 +27,23 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 
 	}
 	
+	
+	@Override
+	public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
+		clients.inMemory()
+		.withClient("angular")
+		.secret("angular")
+		.scopes("read","write")
+		.authorizedGrantTypes("password")
+		.accessTokenValiditySeconds(1800);
+	}
+	
+	
 	@Bean
 	public TokenStore tokenStore() {
 		return new InMemoryTokenStore();
 	}
+	
 }
 
 

@@ -34,7 +34,7 @@ public class ComputadorService {
 		if(pcPraDeletar == null) {
 			throw new EmptyResultDataAccessException(1);
 		}else {
-			computadorRepository.deleteById(codigo);
+			computadorRepository.delete(codigo);
 		}
 	}
 	

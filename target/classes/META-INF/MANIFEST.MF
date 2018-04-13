@@ -4,7 +4,8 @@ Implementation-Version: 0.0.1-SNAPSHOT
 Built-By: samuel
 Implementation-Vendor-Id: br.com.inventarioApi
 Build-Jdk: 1.8.0_162
-Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
- ot-starter-parent/InventarioComputadoresApi
+Implementation-URL: http://projects.spring.io/spring-boot/InventarioCo
+ mputadoresApi/
 Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
 

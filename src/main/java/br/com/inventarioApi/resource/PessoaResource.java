@@ -65,7 +65,7 @@ public class PessoaResource {
 	@DeleteMapping("/{codigo}")
 	@ResponseStatus(HttpStatus.NO_CONTENT) //204 - no_content -> remove e nao retorna nada
 	public void remover(@PathVariable Integer codigo) {
-		pessoaRepository.deleteById(codigo);
+		pessoaRepository.delete(codigo);
 		
 	}
 	
