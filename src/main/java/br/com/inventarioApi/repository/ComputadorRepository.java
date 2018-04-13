@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import br.com.inventarioApi.model.Computador;
 
 @Repository
-public interface ComputadorRepository extends JpaRepository<Computador, Integer>{
+public interface ComputadorRepository extends JpaRepository<Computador, Integer>, ComputadorRepositoryQuery{
 
 	
 	

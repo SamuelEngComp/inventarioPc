@@ -7,6 +7,8 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -40,9 +42,9 @@ public class ComputadorResource {
 	
 	
 	@GetMapping
-	public ResponseEntity<?> listar(ComputadorFilter computadorFilter) {
-		List<Computador> computador = computadorService.listarComputadores();
-		return (!computador.isEmpty() ? ResponseEntity.ok(computador):ResponseEntity.noContent().build());
+	public Page<Computador> listar(ComputadorFilter computadorFilter, Pageable pageable) {
+		
+		return ComputadorRepository.filtrar(computadorFilter,pageable); 
 	}
 	
 	@PostMapping
@@ -75,8 +77,11 @@ public class ComputadorResource {
 	}
 	
 	
-	
-	
+	/*@GetMapping
+	public ResponseEntity<?> listarComputadores(){
+		List<Computador> computador = computadorService.listarComputadores();
+		return (!computador.isEmpty() ? ResponseEntity.ok(computador):ResponseEntity.noContent().build());
+	}*/
 	
 	
 	
